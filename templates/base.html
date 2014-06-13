@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}{{ site.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block desc %}{{ site.description }}{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}{{ site.keywords }}{% endblock %}">
+        <meta name="author" content="Mush">
+        <link rel="pingback" href="/xmlrpc/" />
+        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+        <meta name="baidu-site-verification" content="8i4JOWJ7Tg" />
+
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/bootstrap/css/docs.css" rel="stylesheet">
+        <link href="/static/blog/css/style.css" rel="stylesheet">
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-40519759-5', 'sinaapp.com');
+        ga('send', 'pageview');
+
+        </script>
+        {%  block extend_style %}{% endblock %}
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container" >
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="">
+                                <a href="/">首页</a>
+                            </li>
+                                {% for page in pages %}
+                            <li class="">
+                                {% if page.link %}
+                                <a href="{{ page.link }}">{{ page.title }}</a>
+                                {% else %}
+                                <a href="/{{ page.alias }}/">{{ page.title }}</a>
+                                {% endif %}
+                            </li>
+                                {% endfor %}
+                        </ul>
+                    </div>
+                    <a class="brand" href="/">{{ site.title }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="content">
+            <header class="" id="overview">
+            <div class="row">
+                <div class="span10">
+                    <h1><a href="/">{{ site.title }}</a></h1>
+                    <div id="blogdesc">{{ site.sub_title }}</div>
+                </div>
+
+                <div class="span4">
+                    <div id="search_box">
+                        <form class="form-search" method="get" action="/">
+                            <input type="text" class="input-medium search-query" value="" name="s" id="s">
+                            <button type="submit" class="btn">搜索</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </header>
+
+            <div class="subnav under_line">
+                <ul class="nav nav-pills">
+                    {% for category in categories %}
+                    {% if category.is_nav %}
+                    <li><a href="/category/{{ category.alias }}/">{{ category.name }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="row">
+                <div id="main" class="span9">
+                    {% block main %}{% endblock %}
+                </div>
+
+                <div class="sidebar span3">
+                    {% include "includes/sidebar.html" %}
+                </div>
+            </div>
+
+            <div class="">
+                其他分类：
+                <ul class="nav nav-pills">
+                    {% for category in categories %}
+                    {% if not category.is_nav %}
+                    <li><a href="/category/{{ category.alias }}/">{{ category.name }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+
+        {% include "includes/footer.html" %}
+    </body>
+</html>

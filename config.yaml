@@ -1,0 +1,5 @@
+name: mushapi
+version: 2
+libraries:
+- name: "django"
+  version: "1.5"

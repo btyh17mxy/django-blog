@@ -1,12 +1,19 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+*.pyc
+*~
+*.swp
+.project
+.pydevproject
+.settings
+tags
 # C extensions
 *.so
-
 # Distribution / packaging
 .Python
+.svn
+virtualenv.bundle/
 env/
 bin/
 build/

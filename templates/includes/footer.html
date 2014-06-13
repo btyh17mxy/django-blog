@@ -1,0 +1,26 @@
+<footer class="footer">
+<div class="container">
+    <p>
+    当前{{ online_num }}人在线,表示毫无压力
+    {% if online_num > 50 %}
+    <strong>囧~</strong>
+    {% endif %}
+    {% if online_num < 10 %}
+    <strong>汗~</strong>
+    {% endif %}
+    </p>
+    <p>本页面加载耗时:<!!LOAD_TIMES!!>s</p>
+    <p>
+    Powered by 
+    </p>
+    <p>
+        <a href="https://www.djangoproject.com/" target="_blank"><img src="/static/blog/img/django-small.png" /></a>
+        <a href="http://sae.sina.com.cn/" target="_blank"><img src="/static/blog/img/poweredby-sae.png" /></a>
+    </p>
+    <p>
+        <a href="/sitemap.xml">网站地图</a>
+    </p>
+    <p>版权所有 © 2010-2014 <a href="http://mushapi.sinaapp.com" target="_blank">mushapi.sinaapp.com</a> </p>
+    <p>CC BY-NC-SA 3.0</p>
+</div>
+</footer>
