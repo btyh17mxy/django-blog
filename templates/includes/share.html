@@ -1,15 +1,42 @@
-<div class="row">
-    <div class="btn-group span3 pull-right">
-        <button style="height: 30px; margin-top: 4px; font-size:14px" class="btn btn-info dropdown-toggle pull-right tohide" data-toggle="dropdown"><i class="icon icon-share-alt icon-white"></i> 分享到 <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=tsina&amp;url={{ post.get_absolute_url }}&amp;title={{ post.title }}">新浪微博</a></li>
-            <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=tqq&amp;url={{ post.get_absolute_url }}&amp;title={{ post.title }}">腾讯微博</a></li>
-            <li><a target="blank" href="http://s.evernote.com/grclip?url={{ post.get_absolute_url }}&amp;title={{ post.title }}">印象笔记</a></li>
-            <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=douban&amp;url={{ post.get_absolute_url }}&amp;title={{ post.title }}">豆瓣</a></li>
-            <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=renren&amp;url={{ post.get_absolute_url }}&amp;title={{ post.title }}">人人网</a></li>
-            <li><a target="blank" href="http://share.baidu.com/s?type=text&amp;searchPic=0&amp;sign=on&amp;to=qzone&amp;url={{ post.get_absolute_url }}&amp;title={{ post.title }}">QQ空间</a></li>
-            <li class="divider"></li>
-            <li><a href="mailto:?subject=[the5fire]好文分享：{{ post.title }}&amp;body={{ post.get_absolute_url }}">E-Mail</a></li>
-        </ul>
-    </div>
+<div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">
+    </a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">
+    </a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">
+    </a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">
+    </a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">
+    </a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="分享到邮件分享">
+    </a>
+    <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记">
+    </a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">
+    </a>
 </div>
+<script>
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "share": {},
+        "image": {
+            "viewList": ["tsina", "weixin", "renren", "qzone", "mail", "youdao", "sqq"],
+            "viewText": "分享到：",
+            "viewSize": "24"
+        },
+        "selectShare": {
+            "bdContainerClass": null,
+            "bdSelectMiniList": ["tsina", "weixin", "renren", "qzone", "mail", "youdao", "sqq"]
+        }
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~ ( - new Date() / 36e5)];
+</script>
