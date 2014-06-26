@@ -3,3 +3,10 @@ version: 2
 libraries:
 - name: "django"
   version: "1.5"
+  
+- compress: if ( out_header["Content-type"] ~ "text/css" ) compress
+- compress: if ( out_header["Content-type"] ~ "text/javascript" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/jpeg" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/png" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/gif" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/bmp" ) compress

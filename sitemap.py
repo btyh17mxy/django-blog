@@ -5,7 +5,7 @@ from django.contrib.sitemaps import Sitemap
 from blog.models import Post
 
 class PostSitemap(Sitemap):
-    changefreq = "daily"
+    changefreq = "weekly"
     priority = 0.2
 
     print '&'*90

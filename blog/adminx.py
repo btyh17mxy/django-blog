@@ -12,10 +12,7 @@ from .models import STYLE
 from .models import SiteInfo
 from django.db import models
 #TODO: 兼容markdown和reStructuredText
-#FIXME: 使用reStructruedText时会产生 has no attribute 'getuid' 的异常， 该异常只在SAE环境才会出现.
 
-
-#FIXME: Ueditor有时候不加载，应该是因为所需的Js没有加载
 class PostAdmin(object):
     #form = PostAdminForm
     search_fields = ('title', 'alias')

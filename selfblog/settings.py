@@ -5,7 +5,7 @@ import os
 from os import path
 
 # Debug setting
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # Basic setting
@@ -18,7 +18,7 @@ ALLOWED_HOSTS = ['localhost', 'mushapi.sinaapp.com']
 # Different setting on local environment and SAE.
 if 'SERVER_SOFTWARE' in os.environ:
     # Settings on SAE
-    DEBUG = False
+    #DEBUG = False
     DOMAIN = 'http://mushapi.sinaapp.com'
     DB_HOST = 'w.rdc.sae.sina.com.cn'
     DB_PORT = '3307'
